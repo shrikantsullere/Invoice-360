@@ -1,0 +1,292 @@
+/* Reusing base styles from InventoryAdjustment.css */
+@import '/src/pages/company/Inventory/InventoryAdjustment/InventoryAdjustment.css';
+
+.voucher-page {
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+.voucher-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.voucher-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.voucher-table th {
+    text-align: left;
+    padding: 12px 15px;
+    background-color: #f8f9fa;
+    color: #4b5563;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-bottom: 2px solid #edf2f7;
+}
+
+.voucher-table td {
+    padding: 15px;
+    border-bottom: 1px solid #f3f4f6;
+    font-size: 0.85rem;
+    color: #374151;
+}
+
+/* Modal Specifics */
+.voucher-modal {
+    max-width: 900px !important;
+}
+
+.voucher-header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.logo-upload-area {
+    width: 200px;
+    height: 120px;
+    border: 2px dashed #e2e8f0;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: #f8fafc;
+    transition: all 0.2s;
+}
+
+.logo-upload-area:hover {
+    border-color: #8ce043;
+    background-color: #f0fdf4;
+}
+
+.logo-upload-placeholder {
+    color: #64748b;
+    font-size: 0.8rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.product-details-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #f1f5f9;
+}
+
+.product-details-title {
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: #1e293b;
+    text-transform: uppercase;
+}
+
+.btn-add-product {
+    background-color: #8ce043;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.voucher-items-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+}
+
+.voucher-items-table th {
+    background-color: #f8fafc;
+    padding: 10px;
+    text-align: left;
+    font-size: 0.75rem;
+    color: #64748b;
+    border: 1px solid #e2e8f0;
+}
+
+.voucher-items-table td {
+    padding: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.btn-delete-item {
+    background-color: #fecaca;
+    color: #ef4444;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.voucher-footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.totals-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-end;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    font-size: 0.9rem;
+    color: #4b5563;
+}
+
+.total-row.grand-total {
+    font-weight: 800;
+    color: #1e293b;
+    font-size: 1.1rem;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 0.75rem;
+}
+
+.voucher-action-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.signature-section {
+    margin-top: 2rem;
+}
+
+.signature-label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.75rem;
+}
+
+.btn-upload-signature {
+    background-color: #8ce043;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.input-sm {
+    padding: 6px 10px !important;
+    font-size: 0.8rem !important;
+}
+
+.btn-add-item-link {
+    display: block;
+    background: none;
+    border: 1px solid #8ce043;
+    color: #8ce043;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+.btn-add-item-link:hover {
+    background-color: #f0fdf4;
+}
+
+.voucher-no-text {
+    font-family: monospace;
+    font-weight: 700;
+    color: #64748b;
+}
+
+.thin-border {
+    border: 1px solid #f1f5f9;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* View Modal Specifics */
+.view-header-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 1rem;
+    background-color: #f8fafc;
+    border-radius: 8px;
+}
+
+.view-group label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #64748b;
+    margin-bottom: 0.25rem;
+}
+
+.view-group p {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.voucher-items-table.view-mode th {
+    background-color: #f1f5f9;
+}
+
+.signature-upload-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.signature-preview {
+    position: relative;
+    padding: 5px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background: white;
+}
+
+.remove-sig {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #ef4444;
+    color: white;
+    border: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

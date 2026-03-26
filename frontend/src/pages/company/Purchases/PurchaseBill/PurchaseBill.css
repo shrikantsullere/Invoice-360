@@ -1,0 +1,1324 @@
+/* PurchaseBill.css - Unique Prefix: PBILL- */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --pbill-primary: #8ce043;
+    --pbill-primary-hover: #7acd35;
+    --pbill-primary-light: #f4fcf0;
+    --pbill-success: #16a34a;
+    --pbill-danger: #ef4444;
+    --pbill-warning: #d97706;
+    --pbill-bg: #f8fafc;
+    --pbill-surface: #ffffff;
+    --pbill-border: #e2e8f0;
+    --pbill-text: #1e293b;
+    --pbill-text-muted: #64748b;
+    --pbill-radius: 12px;
+    --pbill-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.PBILL-page {
+    padding: 24px;
+    background-color: var(--pbill-bg);
+    min-height: 100vh;
+    font-family: 'Outfit', sans-serif;
+    color: var(--pbill-text);
+}
+
+/* Header */
+.PBILL-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.PBILL-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+}
+
+.PBILL-subtitle {
+    color: var(--pbill-text-muted);
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.PBILL-btn-add {
+    background: var(--pbill-primary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--pbill-radius);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(140, 224, 67, 0.25);
+}
+
+.PBILL-btn-add:hover {
+    transform: translateY(-1px);
+    background: var(--pbill-primary-hover);
+}
+
+/* Tracker Line */
+.PBILL-tracker-card {
+    background: white;
+    padding: 24px;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    border: 1px solid var(--pbill-border);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.PBILL-tracker-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.PBILL-tracker-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    z-index: 2;
+}
+
+.PBILL-step-icon-box {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f1f5f9;
+    color: #94a3b8;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.PBILL-tracker-step.completed .PBILL-step-icon-box {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.PBILL-tracker-step.active .PBILL-step-icon-box {
+    background: var(--pbill-primary);
+    color: white;
+    box-shadow: 0 8px 16px -4px rgba(140, 224, 67, 0.4);
+}
+
+.PBILL-step-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--pbill-text-muted);
+}
+
+.PBILL-tracker-step.active .PBILL-step-label {
+    color: var(--pbill-primary);
+}
+
+.PBILL-tracker-divider {
+    flex: 1;
+    height: 3px;
+    background: #e2e8f0;
+    margin: -20px 10px 0;
+    border-radius: 4px;
+}
+
+.PBILL-tracker-divider.active {
+    background: var(--pbill-success);
+}
+
+/* Table Section */
+.PBILL-table-card {
+    background: white;
+    border-radius: 16px;
+    border: 1px solid var(--pbill-border);
+    overflow: hidden;
+    box-shadow: var(--pbill-shadow);
+}
+
+.PBILL-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.PBILL-table th {
+    padding: 16px;
+    background: #f8fafc;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--pbill-text-muted);
+    border-bottom: 1px solid var(--pbill-border);
+}
+
+.PBILL-table td {
+    padding: 16px;
+    font-size: 14px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.PBILL-id-cell {
+    font-weight: 700;
+    color: #4d8b0c;
+}
+
+.PBILL-amount-cell {
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.PBILL-status-pill {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    min-width: 80px;
+    text-align: center;
+}
+
+.PBILL-status-pill.unpaid,
+.PBILL-status-pill.un-paid,
+.PBILL-status-pill.pending {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+.PBILL-status-pill.paid,
+.PBILL-status-pill.completed {
+    background: #f0fdf4;
+    color: #16a34a;
+}
+
+.PBILL-status-pill.partial,
+.PBILL-status-pill.partially-paid {
+    background: #fff7ed;
+    color: #f59e0b;
+}
+
+.PBILL-action-group {
+    display: flex;
+    gap: 8px;
+    /* justify-content: flex-end; */
+}
+
+.PBILL-btn-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.PBILL-btn-icon.view {
+    background-color: #f59e0b;
+    /* Orange */
+}
+
+.PBILL-btn-icon.view:hover {
+    background-color: #d97706;
+}
+
+.PBILL-btn-icon.edit {
+    background-color: #06b6d4;
+    /* Cyan */
+}
+
+.PBILL-btn-icon.edit:hover {
+    background-color: #0891b2;
+}
+
+.PBILL-btn-icon.delete {
+    background-color: #f43f5e;
+    /* Red/Pink */
+}
+
+.PBILL-btn-icon.delete:hover {
+    background-color: #e11d48;
+}
+
+.PBILL-btn-icon svg {
+    display: block;
+}
+
+/* Generic Input Styles for Form */
+.PBILL-input-field,
+.PBILL-select-vendor,
+.PBILL-item-select,
+.PBILL-item-input,
+.PBILL-notes-area {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.2s;
+    font-family: inherit;
+    background: white;
+}
+
+.PBILL-input-field:focus,
+.PBILL-select-vendor:focus,
+.PBILL-item-select:focus,
+.PBILL-item-input:focus {
+    border-color: var(--pbill-primary);
+    box-shadow: 0 0 0 3px rgba(140, 224, 67, 0.15);
+    outline: none;
+}
+
+.PBILL-input-field[readonly],
+.PBILL-info-field input[readonly] {
+    background: #f1f5f9;
+    border-style: dashed;
+    cursor: not-allowed;
+}
+
+/* Modal Overlay */
+.PBILL-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 24px;
+}
+
+.PBILL-form-modal {
+    background: white;
+    width: 100%;
+    max-width: 1100px;
+    max-height: 90vh;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.PBILL-modal-header {
+    padding: 24px 32px;
+    border-bottom: 1px solid var(--pbill-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+}
+
+.PBILL-modal-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1e293b;
+    margin: 0;
+}
+
+.PBILL-modal-subtitle {
+    color: #64748b;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.PBILL-close-btn {
+    background: #f1f5f9;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.PBILL-close-btn:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+    transform: rotate(90deg);
+}
+
+.PBILL-modal-body {
+    flex: 1;
+    overflow-y: auto;
+    background: #fff;
+}
+
+.PBILL-form-scroll-area {
+    padding: 32px;
+}
+
+/* Form Layouts */
+.PBILL-form-header-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.PBILL-company-info-section {
+    display: flex;
+    gap: 24px;
+}
+
+.PBILL-logo-uploader {
+    width: 120px;
+    height: 120px;
+    border: 2px dashed #cbd5e1;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #f8fafc;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.PBILL-logo-uploader img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.PBILL-logo-placeholder {
+    color: #94a3b8;
+    text-align: center;
+}
+
+.PBILL-logo-placeholder span {
+    font-size: 10px;
+    font-weight: 600;
+    margin-top: 4px;
+    display: block;
+}
+
+.PBILL-company-inputs {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.PBILL-input-brand {
+    font-size: 28px;
+    font-weight: 800;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 4px 0;
+    width: 100%;
+    outline: none;
+    color: #0f172a;
+}
+
+.PBILL-input-brand:focus {
+    border-bottom-color: var(--pbill-primary);
+}
+
+.PBILL-input-sub {
+    font-size: 15px;
+    color: #475569;
+    border: none;
+    border-bottom: 1px solid transparent;
+    padding: 4px 0;
+    outline: none;
+}
+
+.PBILL-input-sub:focus {
+    border-bottom-color: #cbd5e1;
+}
+
+.PBILL-input-wrapper-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+/* Meta Card */
+.PBILL-meta-config-card {
+    background: #f1f5f9;
+    padding: 24px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+    border: 1px solid #e2e8f0;
+}
+
+.PBILL-meta-field {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    align-items: center;
+    gap: 12px;
+}
+
+.PBILL-meta-field label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #475569;
+}
+
+.PBILL-meta-field input {
+    background: white;
+    border: 1px solid #cbd5e1;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.PBILL-status-indicator {
+    position: absolute;
+    bottom: -10px;
+    right: 20px;
+    background: var(--pbill-danger);
+    color: white;
+    padding: 4px 16px;
+    border-radius: 4px;
+    font-weight: 900;
+    font-size: 14px;
+    transform: rotate(-2deg);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+/* Vendor Section */
+.PBILL-vendor-section {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 24px;
+    border-radius: 16px;
+    margin-bottom: 32px;
+}
+
+.PBILL-field-label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.PBILL-select-vendor {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px;
+    border-color: #94a3b8;
+}
+
+.PBILL-vendor-info-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 20px;
+    margin-top: 24px;
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.PBILL-info-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.PBILL-info-field label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.PBILL-info-field input {
+    background: white;
+    border: 1px solid #cbd5e1;
+    padding: 12px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #1e293b;
+    font-weight: 500;
+    width: 100%;
+}
+
+.PBILL-info-field input[readonly] {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    color: #475569;
+    cursor: default;
+}
+
+.PBILL-info-field input[readonly]:focus {
+    border-color: #cbd5e1;
+    outline: none;
+}
+
+/* Items Section */
+.PBILL-items-section {
+    margin-bottom: 32px;
+}
+
+.PBILL-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.PBILL-inner-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+}
+
+.PBILL-btn-add-line {
+    background: var(--pbill-primary-light);
+    color: var(--pbill-primary);
+    border: 1px solid var(--pbill-primary);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.PBILL-btn-add-line:hover {
+    background: var(--pbill-primary);
+    color: white;
+}
+
+.PBILL-form-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    margin-top: -8px;
+}
+
+.PBILL-form-table th {
+    padding: 12px;
+    font-size: 12px;
+    color: #64748b;
+    text-align: left;
+}
+
+.PBILL-form-table td {
+    background: white;
+    padding: 8px;
+    border-top: 1px solid #f1f5f9;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.PBILL-form-table td:first-child {
+    border-left: 1px solid #f1f5f9;
+    border-radius: 8px 0 0 8px;
+}
+
+.PBILL-form-table td:last-child {
+    border-right: 1px solid #f1f5f9;
+    border-radius: 0 8px 8px 0;
+}
+
+.PBILL-item-input.center {
+    text-align: center;
+}
+
+.PBILL-item-input.right {
+    text-align: right;
+}
+
+.PBILL-item-total {
+    text-align: right;
+    font-weight: 700;
+    color: #1e293b;
+    padding-right: 12px;
+}
+
+.PBILL-btn-remove {
+    background: #fef2f2;
+    color: #ef4444;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* Footer Section */
+.PBILL-footer-details {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 40px;
+    border-top: 2px solid #f1f5f9;
+    padding-top: 32px;
+}
+
+.PBILL-footer-block {
+    margin-bottom: 24px;
+}
+
+.PBILL-bank-input-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 12px;
+}
+
+.PBILL-notes-area {
+    min-height: 120px;
+    resize: vertical;
+    margin-top: 12px;
+}
+
+.PBILL-summary-card {
+    background: #f8fafc;
+    padding: 24px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.PBILL-summary-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 500;
+    color: #64748b;
+}
+
+.PBILL-summary-row.PBILL-discount {
+    color: #ef4444;
+}
+
+.PBILL-grand-total {
+    border-top: 2px solid #e2e8f0;
+    margin-top: 8px;
+    padding-top: 16px;
+    font-size: 22px;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+/* Actions */
+.PBILL-form-actions {
+    position: sticky;
+    bottom: 0;
+    background: white;
+    padding: 24px 32px;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+    z-index: 20;
+}
+
+.PBILL-btn-primary {
+    background: var(--pbill-primary);
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.PBILL-btn-cancel {
+    background: white;
+    color: #64748b;
+    border: 1px solid #e2e8f0;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Source Modal Specifics */
+.PBILL-source-modal {
+    background: white;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.PBILL-source-header {
+    padding: 24px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.PBILL-source-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1e293b;
+    margin: 0;
+}
+
+.PBILL-source-grid {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.PBILL-src-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid #f1f5f9;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.PBILL-src-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--pbill-primary);
+    background: var(--pbill-primary-light);
+    box-shadow: 0 10px 15px -3px rgba(140, 224, 67, 0.1);
+}
+
+.PBILL-src-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f1f5f9;
+    color: #475569;
+}
+
+.PBILL-src-card.PBILL-po .PBILL-src-icon {
+    background: var(--pbill-primary-light);
+    color: #4d8b0c;
+}
+
+.PBILL-src-card.PBILL-grn .PBILL-src-icon {
+    background: #fffbeb;
+    color: #d97706;
+}
+
+.PBILL-src-text h4 {
+    margin: 0 0 2px 0;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.PBILL-src-text p {
+    margin: 0;
+    font-size: 13px;
+    color: #64748b;
+}
+
+.PBILL-doc-list-wrapper {
+    padding: 20px;
+}
+
+.PBILL-doc-scroll {
+    max-height: 400px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.PBILL-doc-item {
+    padding: 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.PBILL-doc-item:hover {
+    border-color: var(--pbill-primary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.PBILL-doc-main {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+
+.PBILL-doc-ref {
+    font-weight: 700;
+    color: #4d8b0c;
+}
+
+.PBILL-doc-date {
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+.PBILL-doc-sub {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #475569;
+}
+
+.PBILL-doc-price {
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.PBILL-back-link {
+    border: none;
+    background: none;
+    color: var(--pbill-primary);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    cursor: pointer;
+}
+
+/* View Container Design */
+.PBILL-view-container {
+    padding: 60px;
+    background: white;
+    color: #1e293b;
+}
+
+.PBILL-view-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+.PBILL-view-logo img {
+    max-width: 140px;
+    height: auto;
+}
+
+.PBILL-doc-type {
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    margin: 0 0 20px 0;
+    text-align: right;
+}
+
+.PBILL-view-meta-grid {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.PBILL-view-meta-grid p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.PBILL-view-meta-grid span {
+    color: #64748b;
+    font-weight: 600;
+    min-width: 120px;
+    display: inline-block;
+}
+
+.PBILL-view-vendor-card {
+    padding: 24px;
+    border-radius: 12px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    line-height: 1.6;
+}
+
+.PBILL-vendor-name {
+    font-size: 20px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.PBILL-view-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 40px 0;
+}
+
+.PBILL-view-table th {
+    padding: 12px 0;
+    border-bottom: 2px solid #0f172a;
+    text-align: left;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.PBILL-view-table td {
+    padding: 16px 0;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 14px;
+}
+
+.PBILL-view-total-row.PBILL-bold {
+    font-size: 22px;
+    font-weight: 900;
+    border-top: 2px solid #0f172a;
+    margin-top: 12px;
+    padding-top: 20px;
+    color: #0f172a;
+}
+
+.PBILL-bank-view-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.PBILL-bank-view-grid p {
+    margin: 0;
+    font-size: 13px;
+}
+
+.PBILL-bank-view-grid span {
+    font-weight: 700;
+    color: #64748b;
+    margin-right: 8px;
+}
+
+/* Width Utilities */
+.PBILL-w-80 {
+    width: 80px;
+}
+
+.PBILL-w-100 {
+    width: 100px;
+}
+
+.PBILL-w-120 {
+    width: 120px;
+}
+
+.PBILL-w-140 {
+    width: 140px;
+}
+
+.PBILL-w-50 {
+    width: 50px;
+}
+
+@media print {
+    .no-print {
+        display: none !important;
+    }
+
+    body * {
+        visibility: hidden;
+    }
+
+    #print-area,
+    #print-area * {
+        visibility: visible;
+    }
+
+    #print-area {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+/* Shared Invoice Template Styles (Imported from CompanySettings/Invoice) */
+/* DELETE MODAL STYLES */
+.PBILL-delete-card {
+    background: white;
+    padding: 40px;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.PBILL-delete-icon {
+    width: 80px;
+    height: 80px;
+    background: #fef2f2;
+    color: #ef4444;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+}
+
+.PBILL-delete-card h3 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 12px;
+}
+
+.PBILL-delete-card p {
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+.PBILL-delete-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.PBILL-btn-alt {
+    padding: 12px;
+    background: #f1f5f9;
+    color: #475569;
+    border-radius: 12px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.PBILL-btn-alt:hover {
+    background: #e2e8f0;
+}
+
+.PBILL-btn-danger {
+    padding: 12px;
+    background: #ef4444;
+    color: white;
+    border-radius: 12px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+}
+
+.PBILL-btn-danger:hover {
+    background: #dc2626;
+    transform: translateY(-1px);
+}
+
+/* Shared Invoice Template Styles */
+.PBILL-invoice-preview-container {
+    background: white;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 2rem;
+    transform-origin: top left;
+}
+
+.PBILL-invoice-preview-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+}
+
+.PBILL-invoice-header-left {
+    flex: 1;
+}
+
+.PBILL-invoice-logo-large {
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    max-width: 200px;
+}
+
+.PBILL-invoice-title-large {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.PBILL-invoice-details-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+}
+
+.PBILL-invoice-company-details {
+    font-size: 0.9rem;
+    color: #000000;
+    line-height: 1.5;
+}
+
+.PBILL-invoice-meta-info {
+    text-align: right;
+}
+
+.PBILL-invoice-meta-row {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+}
+
+.PBILL-invoice-label {
+    font-weight: 600;
+    color: #64748b;
+}
+
+.PBILL-invoice-qr-box {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.PBILL-invoice-qr-code {
+    width: 100px;
+    height: 100px;
+    background: #f1f5f9;
+}
+
+.PBILL-invoice-addresses {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0;
+    padding-top: 2rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+.PBILL-invoice-bill-to,
+.PBILL-invoice-ship-to {
+    width: 45%;
+}
+
+.PBILL-invoice-section-header {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #1e293b;
+}
+
+.PBILL-invoice-table-preview {
+    width: 100%;
+    margin-top: 2rem;
+    border-collapse: collapse;
+}
+
+.PBILL-invoice-table-preview th {
+    text-align: left;
+    padding: 1rem;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.PBILL-invoice-table-preview td {
+    padding: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    color: #334155;
+    font-size: 0.9rem;
+}
+
+.PBILL-invoice-total-section {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.PBILL-invoice-totals {
+    width: 300px;
+}
+
+.PBILL-invoice-total-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 0.9rem;
+}
+
+.PBILL-invoice-final-total {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+}
+
+/* Template Specific Styles - New York */
+.PBILL-template-newyork .PBILL-invoice-header-wrapper {
+    background: var(--header-bg, #004aad);
+    color: white;
+    padding: 2rem;
+    margin: -2rem -2rem 2rem -2rem;
+}
+
+.PBILL-template-newyork .PBILL-invoice-title-large {
+    color: white;
+}
+
+.PBILL-template-newyork .PBILL-invoice-table-preview th {
+    background: var(--header-bg, #004aad);
+}
+
+.PBILL-template-newyork .PBILL-invoice-final-total {
+    color: var(--header-bg, #004aad);
+}
+
+/* Template - Toronto (Simple) */
+.PBILL-template-toronto .PBILL-invoice-title-large {
+    color: var(--header-bg, #004aad);
+}
+
+.PBILL-template-toronto .PBILL-invoice-table-preview th {
+    background: var(--header-bg, #004aad);
+}
+
+/* Template - Rio */
+.PBILL-template-rio .PBILL-invoice-header-wrapper {
+    border-bottom: 4px solid var(--header-bg, #004aad);
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}

@@ -1,0 +1,186 @@
+@import '/src/pages/company/Inventory/StockTransfer/StockTransfer.css';
+
+.adjustment-page {
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+.adjustment-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.adjustment-action-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.adjustment-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.adjustment-table th {
+    text-align: left;
+    padding: 12px 15px;
+    background-color: #f8f9fa;
+    color: #4b5563;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-bottom: 2px solid #edf2f7;
+}
+
+.adjustment-table td {
+    padding: 15px;
+    border-bottom: 1px solid #f3f4f6;
+    font-size: 0.85rem;
+    color: #374151;
+}
+
+.type-badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.type-badge.add-stock {
+    background-color: #ecfdf5;
+    color: #10b981;
+}
+
+.type-badge.remove-stock {
+    background-color: #fef2f2;
+    color: #ef4444;
+}
+
+.type-badge.adjust-value {
+    background-color: #eff6ff;
+    color: #3b82f6;
+}
+
+/* Modal Specifics */
+.inventory-adjustment-modal {
+    max-width: 900px !important;
+}
+
+.radio-group-horizontal {
+    display: flex;
+    gap: 2rem;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: #334155;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.radio-label input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #8ce043;
+}
+
+.footer-flex-row {
+    display: flex;
+    gap: 2rem;
+    align-items: stretch;
+    margin-top: 1.5rem;
+}
+
+.total-display-card {
+    background-color: #f8fafc;
+    padding: 1.25rem;
+    border-radius: 12px;
+    border: 1px dashed #cbd5e1;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: right;
+}
+
+.total-display-card label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #64748b;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.total-amount-display {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1e293b;
+}
+
+/* Reuse table inputs from stock transfer but adjust if needed */
+.items-input-table input.table-input {
+    padding: 8px;
+    border: 1px solid #cbd5e1;
+}
+
+.items-input-table input.table-input:focus {
+    border-color: #8ce043;
+    box-shadow: 0 0 0 2px rgba(140, 224, 67, 0.2);
+}
+
+.view-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    background: #f8fafc;
+    padding: 1.5rem;
+    border-radius: 12px;
+}
+
+.view-item label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: #94a3b8;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+}
+
+.view-item p {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.mt-6 {
+    margin-top: 1.5rem;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.text-red-500 {
+    color: #ef4444;
+}
+
+.bg-red-500 {
+    background-color: #ef4444;
+    color: white;
+}
+
+.bg-red-500:hover {
+    background-color: #dc2626;
+}

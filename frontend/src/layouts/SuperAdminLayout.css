@@ -1,0 +1,49 @@
+.layout-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--background);
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    transition: margin-left 0.3s ease;
+    height: 100vh;
+    overflow: hidden;
+    width: 100%;
+}
+
+.main-content.sidebar-open {
+    margin-left: 260px;
+}
+
+.main-content.sidebar-closed {
+    margin-left: 80px;
+}
+
+.page-content {
+    padding: 2rem;
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* Prevent horizontal scroll on the page wrapper */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+
+    .main-content.sidebar-open,
+    .main-content.sidebar-closed {
+        margin-left: 0 !important;
+        /* Sidebar is overlay on mobile */
+    }
+
+    .page-content {
+        padding: 1rem;
+        /* Reduce padding on mobile */
+        overflow-x: auto;
+        /* Allow horizontal scroll for wide content like tables */
+    }
+}

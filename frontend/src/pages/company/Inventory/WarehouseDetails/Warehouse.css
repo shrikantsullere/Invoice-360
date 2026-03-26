@@ -1,0 +1,162 @@
+/* Reusing base styles from Customers.css */
+@import '../../Customers/Customers.css';
+
+.warehouse-page {
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+.warehouse-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.warehouse-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.warehouse-table th {
+    text-align: left;
+    padding: 12px 15px;
+    background-color: #f8f9fa;
+    color: #4b5563;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-bottom: 2px solid #edf2f7;
+}
+
+.warehouse-table td {
+    padding: 15px;
+    border-bottom: 1px solid #f3f4f6;
+    font-size: 0.85rem;
+    color: #374151;
+}
+
+/* Modal Specifics */
+.warehouse-modal {
+    max-width: 650px !important;
+}
+
+.btn-close-modal {
+    padding: 10px 24px;
+    border-radius: 6px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn-create-modal {
+    padding: 10px 24px;
+    border-radius: 6px;
+    background-color: #8ce043;
+    /* Teal/Green like image */
+    color: white;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn-create-modal:hover,
+.btn-close-modal:hover {
+    opacity: 0.9;
+}
+
+.three-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.form-label span.text-red {
+    color: #e53e3e;
+    margin-left: 2px;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-top: 1px solid #edf2f7;
+}
+
+.modal-header .close-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #a0aec0;
+}
+
+.warehouse-action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-view {
+    color: #6366f1;
+    background-color: #e0e7ff;
+}
+
+.btn-view:hover {
+    background-color: #c7d2fe;
+}
+
+
+/* Pagination Styles */
+.pagination-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+.pagination-info {
+    font-size: 0.875rem;
+    color: #64748b;
+    margin: 0;
+}
+
+.pagination-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.pagination-btn {
+    padding: 0.375rem 0.75rem;
+    border: 1px solid #e2e8f0;
+    background: white;
+    color: #475569;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.pagination-btn:hover:not(.disabled) {
+    border-color: #cbd5e1;
+    background-color: #f8fafc;
+}
+
+.pagination-btn.active {
+    background-color: #8ce043;
+    color: white;
+    border-color: #8ce043;
+}
+
+.pagination-btn.disabled {
+    color: #cbd5e1;
+    cursor: not-allowed;
+    background-color: #f8fafc;
+}

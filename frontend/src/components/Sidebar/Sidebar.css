@@ -1,0 +1,320 @@
+/* ===============================
+   SIDEBAR CONTAINER
+================================ */
+.sidebar {
+    width: 260px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #ffffff;
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    transition: width 0.3s ease, padding 0.3s ease;
+    z-index: 1000;
+    z-index: 1000;
+    overflow: hidden;
+    padding: 1.5rem 1rem;
+}
+
+.sidebar.collapsed {
+    width: 80px;
+    padding: 1.5rem 0.75rem;
+}
+
+/* ===============================
+   SIDEBAR HEADER
+================================ */
+.sidebar-header {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* ===============================
+   LOGO
+================================ */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+    padding-bottom: 1rem;
+    flex-shrink: 0;
+}
+
+/* SHORT LOGO (ZB) */
+.logo-short {
+    display: none;
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--text-main);
+}
+
+/* FULL LOGO */
+.logo-full {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.logo-full img {
+    max-height: 50px;
+    max-width: 180px;
+    object-fit: contain;
+}
+
+.logo-short img {
+    max-height: 32px;
+    max-width: 32px;
+    object-fit: contain;
+}
+
+.logo-main {
+    font-weight: 800;
+    font-size: 2rem;
+    color: var(--text-main);
+    letter-spacing: -0.5px;
+}
+
+.logo-text-extra {
+    font-weight: 800;
+}
+
+.logo-accent {
+    font-weight: 800;
+    font-size: 2rem;
+    color: #8ce043;
+}
+
+/* LOGO STATE CONTROL */
+.sidebar.open .logo-full {
+    display: flex;
+}
+
+.sidebar.open .logo-short {
+    display: none;
+    font-weight: 800;
+    font-size: 2rem;
+
+}
+
+.sidebar.collapsed .logo-full {
+    display: none;
+}
+
+.sidebar.collapsed .logo-short {
+    display: block;
+    font-weight: 800;
+    font-size: 2rem;
+}
+
+.sidebar.collapsed .logo {
+    justify-content: center;
+}
+
+/* ===============================
+   NAVIGATION
+================================ */
+/* ===============================
+   NAVIGATION
+================================ */
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 4px;
+    /* Space for scrollbar */
+}
+
+/* ===============================
+   MENU ITEM
+================================ */
+.menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.6rem;
+    color: var(--text-main);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.9rem;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+
+.sidebar.open .menu-item {
+    padding: 0.6rem 1rem;
+}
+
+/* ICON + TEXT */
+.icon-label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.menu-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    border-radius: 10px;
+    background-color: #f8fafc;
+    color: #64748b;
+    transition: all 0.2s ease;
+}
+
+/* COLLAPSED MENU */
+.sidebar.collapsed .menu-item {
+    justify-content: center;
+    padding: 0.6rem 0;
+}
+
+.sidebar.collapsed .icon-label {
+    gap: 0;
+}
+
+.menu-text {
+    flex: 1;
+    transition: opacity 0.2s ease;
+}
+
+.sidebar.collapsed .menu-text,
+.sidebar.collapsed .chevron-wrapper,
+.sidebar.collapsed .submenu {
+    display: none;
+}
+
+/* HOVER */
+.menu-item:hover {
+    background-color: #f1f5f9;
+}
+
+.menu-item:hover .menu-icon-wrapper {
+    background-color: #e2e8f0;
+    color: var(--text-main);
+}
+
+/* ===============================
+   ACTIVE STATE
+================================ */
+.menu-item.active,
+.menu-item.active-parent {
+    background-color: #8ce043;
+    color: white;
+    box-shadow: 0 4px 12px rgba(140, 224, 67, 0.25);
+}
+
+.menu-item.active .menu-icon-wrapper,
+.menu-item.active-parent .menu-icon-wrapper {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.menu-item.active .menu-text,
+.menu-item.active-parent .menu-text {
+    color: white;
+}
+
+/* ===============================
+   SUBMENU
+================================ */
+.submenu {
+    display: none;
+    margin-left: 1.5rem;
+    margin-top: 0.25rem;
+    padding-left: 0.75rem;
+    border-left: 1px solid #edf2f7;
+}
+
+.submenu.expanded {
+    display: block;
+}
+
+.submenu-item {
+    display: block;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    color: #64748b;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-radius: 8px;
+    margin-bottom: 2px;
+}
+
+.submenu-item:hover {
+    color: #1e293b;
+    background-color: #f1f5f9;
+}
+
+.submenu-item.active {
+    color: #8ce043;
+    font-weight: 600;
+    background-color: #f0fdf4;
+}
+
+/* ===============================
+   MOBILE RESPONSIVENESS
+================================ */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(0);
+        box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar.collapsed {
+        width: 260px;
+        /* Maintain full width structure */
+        transform: translateX(-100%);
+        /* Hide off-screen */
+        padding: 1.5rem 1rem;
+    }
+
+    /* Override collapsed styles to keep internal structure intact (hidden off-screen) */
+    .sidebar.collapsed .menu-text,
+    .sidebar.collapsed .chevron-wrapper {
+        display: block !important;
+    }
+
+    .sidebar.collapsed .submenu {
+        display: none;
+        /* Keep natural behavior, but allow expanded if needed (though tricky if purely CSS override) */
+    }
+
+    .sidebar.collapsed .submenu.expanded {
+        display: block !important;
+    }
+
+    .sidebar.collapsed .logo-full {
+        display: flex !important;
+    }
+
+    .sidebar.collapsed .logo-short {
+        display: none !important;
+    }
+
+    .sidebar.collapsed .menu-item {
+        justify-content: space-between !important;
+        padding: 0.6rem !important;
+        /* Reset padding */
+    }
+
+    .sidebar.collapsed .icon-label {
+        gap: 0.75rem !important;
+    }
+}
